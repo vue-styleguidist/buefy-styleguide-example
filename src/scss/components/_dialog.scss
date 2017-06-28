@@ -1,0 +1,35 @@
+.dialog {
+    transition: all $speed-slow $easing;
+    .modal-card-body {
+        align-items: center;
+        .custom-icon {
+            margin-left: -8px;
+            margin-right: 16px;
+        }
+        .control {
+            margin-top: 16px;
+        }
+        &.is-titleless {
+            border-top-left-radius: $radius-large;
+            border-top-right-radius: $radius-large;
+        }
+    }
+    .modal-card {
+        min-width: 320px;
+        max-width: 460px;
+        width: auto;
+        transition: all $speed-slow $easing;
+    }
+    .modal-card-title {
+        font-size: $size-5;
+        font-weight: $weight-semibold;
+    }
+    .modal-card-foot {
+        display: flex;
+        justify-content: flex-end;
+        .button {
+            min-width: 80px;
+            font-weight: $weight-semibold;
+        }
+    }
+}

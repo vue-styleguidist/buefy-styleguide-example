@@ -1,0 +1,75 @@
+.switch {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    & + .switch {
+        margin-left: 0.5em;
+    }
+    input[type=checkbox] {
+        display: none;
+        + .check {
+            position: relative;
+            width: 2.75em;
+            height: 1.5em;
+            background: $grey-light;
+            border-radius: 1em;
+            transition: all $speed $easing;
+            &:before {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                width: 1.5em;
+                height: inherit;
+                background: $background;
+                transform: scale(0.74);
+                box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+                animation-name: switchOff;
+                animation-timing-function: linear;
+            }
+            &.is-animated:before {
+                animation-duration: $speed-slower;
+            }
+        }
+        &:checked + .check {
+            background: $primary;
+            &:before {
+                animation-name: switchOn;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+    .control-label {
+        padding-left: 0.5em;
+    }
+    &:hover {
+        input[type=checkbox] + .check {
+            background: rgba($grey-light, 0.9);
+        }
+        input[type=checkbox]:checked + .check {
+            background: rgba($primary, 0.9);
+        }
+    }
+    &:focus {
+        outline: none;
+        input[type=checkbox] + .check {
+            box-shadow: 0 0 0.5em rgba($grey, 0.6);
+        }
+        input[type=checkbox]:checked + .check {
+            box-shadow: 0 0 0.5em rgba($primary, 0.8);
+        }
+    }
+    &.is-small {
+        @include control-small;
+    }
+    &.is-medium{
+        @include control-medium;
+    }
+    &.is-large {
+        @include control-large;
+    }
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: $grey;
+    }
+}

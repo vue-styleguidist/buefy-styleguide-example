@@ -1,0 +1,57 @@
+.radio {
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    & + .radio {
+        margin-left: 0.5em;
+    }
+    input[type=radio] {
+        display: none;
+        + .check {
+            position: relative;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid $grey;
+            background: none;
+            transition: all $speed $easing;
+            border-radius: 50%;
+            &:before {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                left: -2px; // Border gap
+                top: -2px; // Border gap
+                width: inherit;
+                height: inherit;
+                background: $primary;
+                transform: scale(0);
+                transition: transform $speed $easing;
+            }
+        }
+        &:checked + .check {
+            border-color: $primary;
+            &:before {
+                transform: scale(0.5);
+            }
+        }
+    }
+    .control-label {
+        padding-left: 0.5em;
+    }
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &:hover {
+        input[type=radio] + .check {
+            border-color: $primary;
+        }
+    }
+    &:focus {
+        input[type=radio] + .check {
+            box-shadow: 0 0 0.5em rgba($grey, 0.8);
+        }
+        input[type=radio]:checked + .check {
+            box-shadow: 0 0 0.5em rgba($primary, 0.8);
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.label {
+    font-weight: $weight-semibold
+}
+
+.field {
+    &.is-grouped {
+        .field {
+            flex-shrink: 0;
+            & + .field {
+                margin-left: 0.75rem;
+            }
+            &.is-expanded {
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+        }
+    }
+}
+
+.control {
+    .help.counter {
+        float: right;
+        margin-left: 0.5em;
+    }
+    &.has-icon {
+        .icon {
+            &.is-right {
+                right: 0;
+                left: auto;
+            }
+            &.is-clickable {
+                pointer-events: auto;
+                cursor: pointer;
+            }
+        }
+        .icon:not(.is-clickable),
+        .input:focus + .icon {
+            @each $name, $pair in $colors {
+                $color: nth($pair, 1);
+                $color-invert: nth($pair, 2);
+                &.is-#{$name} {
+                    color: $color;
+                }
+            }
+        }
+        &.has-both-icon .input {
+            padding-right: 2.25em;
+        }
+    }
+}
