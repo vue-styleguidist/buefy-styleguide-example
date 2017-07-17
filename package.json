@@ -39,7 +39,7 @@
   "dependencies": {
     "bulma": "^0.4.2",
     "vue": "^2.3.3",
-    "vue-styleguidist": "^1.1.5"
+    "vue-styleguidist": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
