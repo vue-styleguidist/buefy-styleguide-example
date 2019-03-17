@@ -1,11 +1,9 @@
 const config = {
     defaultContentElement: null,
-    defaultIconPack: 'mdi',
-    defaultTooltipType: 'is-primary',
+    defaultIconPack: "mdi",
+    defaultTooltipType: "is-primary",
     defaultTooltipAnimated: false,
-    defaultInputAutocomplete: 'on'
-}
+    defaultInputAutocomplete: "on"
+};
 
-export default config
-
-export const setOptions = options => { this.config = options }
+export default config;
