@@ -67,12 +67,13 @@ module.exports = {
             links: [
                 {
                     rel: "stylesheet",
-                    href: "//fonts.googleapis.com/icon?family=Material+Icons"
+                    href:
+                        "//cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css"
                 },
                 {
                     rel: "stylesheet",
                     href:
-                        "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                        "https://use.fontawesome.com/releases/v5.2.0/css/all.css"
                 }
             ]
         }
