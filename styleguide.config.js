@@ -1,5 +1,4 @@
-const fs = require("fs");
-const path = require("path");
+const vueDocs = require("vue-docgen-api");
 const camelToKebab = function(str) {
     return str.replace(/([A-Z])/g, function($1) {
         return "-" + $1.toLowerCase();
@@ -78,7 +77,7 @@ module.exports = {
             ]
         }
     },
-    propsParser(file, source) {
+    propsParser(file) {
         const doc = vueDocs.parse(file);
         doc.displayName = camelToKebab(doc.displayName);
         return doc;

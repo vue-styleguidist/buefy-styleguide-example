@@ -1,8 +1,6 @@
 <template>
-  <span class="icon" :class="[type, size]">
-    <i
-      :class="[newPack, newPack === 'fa' ? `fa-${newIcon}` : null ]"
-    >{{ newPack === 'mdi' ? newIcon : null }}</i>
+  <span class="icon" :class="[newType, size]">
+    <i :class="[newPack, newIcon, newCustomSize, customClass]"/>
   </span>
 </template>
 
@@ -59,7 +57,7 @@ export default {
           ? this.icon
           : this.equivalentIconOf(this.icon);
       } else {
-        return this.icon;
+        return `${this.newPack}-${this.icon}`;
       }
     }
   },

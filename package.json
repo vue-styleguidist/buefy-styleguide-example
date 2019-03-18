@@ -14,13 +14,13 @@
     "vue": "^2.6.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
+    "@vue/cli-plugin-babel": "^3.5.1",
+    "@vue/cli-plugin-eslint": "^3.5.1",
+    "@vue/cli-service": "^3.5.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-cli-plugin-styleguidist": "^3.9.3",
+    "vue-cli-plugin-styleguidist": "^3.10.0",
     "vue-template-compiler": "^2.5.21",
     "webpack": "^4.29.6"
   },
@@ -33,7 +33,11 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "vue/no-reserved-keys": "off",
+      "vue/return-in-computed-property": "off",
+      "vue/require-v-for-key": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
